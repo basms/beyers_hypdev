@@ -50,7 +50,7 @@ shoe_list = []
 # ==========Functions outside the class==============
 def read_shoes_data():
     try:
-        with open('inventory.txt', 'r', encoding='utf-8') as f:
+        with open('stock_info.txt', 'r', encoding='utf-8') as f:
             f.readline()  # Skip over first line
 
             for line in f:
@@ -84,7 +84,7 @@ def capture_shoes():
         quantity = int(input("Enter quantity: "))
 
         # Write to file
-        with open('inventory.txt', 'a', encoding='utf-8') as f:
+        with open('stock_info.txt', 'a', encoding='utf-8') as f:
             f.write(f"\n{country},{code},{product},{cost},{quantity}")
 
         # Create object and append list
@@ -105,7 +105,7 @@ def view_all():
     try:
         data_lists = []  # Initialize list for all data lists
 
-        with open('inventory.txt', 'r', encoding='utf-8') as f:
+        with open('stock_info.txt', 'r', encoding='utf-8') as f:
             f.readline()  # Skip over first line
 
             for line in f:
@@ -158,7 +158,7 @@ def re_stock():
     # Shoe index + 1 since first line of .txt isn't in shoe_list
     shoe_index = (shoe_list.index(min_shoe) + 1)
 
-    with open('inventory.txt', 'r', encoding='utf-8') as f:
+    with open('stock_info.txt', 'r', encoding='utf-8') as f:
 
         # Initialize writing lists
         country = []
@@ -182,7 +182,7 @@ def re_stock():
         quantity.pop(shoe_index)
         quantity.insert(shoe_index, new_total)
 
-    with open('inventory.txt', 'w', encoding='utf-8') as f:
+    with open('stock_info.txt', 'w', encoding='utf-8') as f:
 
         # Re-write first line of file
         f.write(f"{country[0]},{code[0]},{product[0]},{cost[0]},{quantity[0]}")
@@ -257,7 +257,7 @@ def highest_qty():
         else:
             continue
 
-    print("\n========== Highist stock item ==========\n")
+    print("\n========== Highest stock item ==========\n")
     print(f"{max_shoe.product} is currently on sale")
 
 
