@@ -273,7 +273,8 @@ while running:
 [4] -   Search for inventory
 [5] -   Show current stock value
 [6] -   Show item with highest stock
-[7] -   Exit
+[7] -   Application admin contact information
+[8] -   Exit
 \nEnter an option: '''))
 
         if menu == 1:
@@ -294,7 +295,11 @@ while running:
         elif menu == 6:
             highest_qty()
 
-        elif menu == 7:
+        elif menu == 8:
+            print("\nPlease contact us if you encounter any issues:"
+                  "Email: support@inventory.com\nCall us: 022 234 1234")
+
+        elif menu == 8:
             print("\nGoodbye!!!\n")
             break
 
